@@ -16,5 +16,10 @@ const generateTemplate = (todo) => {
 addForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const todo = addForm.add.value.trim(); //trim to remove white spaces
-  generateTemplate(todo);
+
+  //check if user entered valid information
+  if (todo.length) {
+    generateTemplate(todo);
+    addForm.reset();
+  }
 });
